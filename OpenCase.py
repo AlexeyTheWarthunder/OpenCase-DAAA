@@ -1564,8 +1564,6 @@ skinCaseChance = '''7
 for i in range(len(skinCaseChance)):
     skinCaseChance[i] = float(skinCaseChance[i])
 
-print(masterCase)
-print(mastCaseChance)
 def OpenCase(case, chances):
     for i in range(100):
         os.system('cls')
