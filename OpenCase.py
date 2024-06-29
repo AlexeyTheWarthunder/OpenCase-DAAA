@@ -771,6 +771,57 @@ Martyrs
 Dune
 Glaciers'''.split("\n")
 
+partCase = '''Часть Mk14 EBR #1
+Часть M249 #1
+Часть M82A3 #1
+Часть M134 #1
+Часть РПГ-7 #1
+Часть M1014 #1
+Часть SCAR Mk20 #1
+Часть MRAD #1
+Часть бедроковой брони #1
+Часть Mk14 EBR #2
+Часть M249 #2
+Часть M82A3 #2
+Часть M134 #2
+Часть РПГ-7 #2
+Часть M1014 #2
+Часть SCAR Mk20 #2
+Часть MRAD #2
+Часть бедроковой брони #2
+Часть Mk14 EBR #3
+Часть M249 #3
+Часть M82A3 #3
+Часть M134 #3
+Часть РПГ-7 #3
+Часть M1014 #3
+Часть SCAR Mk20 #3
+Часть MRAD #3
+Часть бедроковой брони #3
+Часть M82A3 #4
+Часть M134 #4
+Часть РПГ-7 #4
+Часть бедроковой брони #4
+Часть M82A3 #5
+Часть M134 #5
+Часть РПГ-7 #5
+Часть бедроковой брони #5
+Часть M82A3 #6
+Часть M134 #6
+Часть РПГ-7 #6
+Часть бедроковой брони #6
+Часть M82A3 #7
+Часть M134 #7
+Часть РПГ-7 #7
+Часть бедроковой брони #7
+Часть M82A3 #8
+Часть M134 #8
+Часть РПГ-7 #8
+Часть бедроковой брони #8
+Часть снаряжения Ветерана
+Часть снаряжения Мастера
+Часть снаряжения Легенды'''.split("\n")
+
 begCaseChance = '''5
 5
 5
@@ -1564,6 +1615,59 @@ skinCaseChance = '''7
 for i in range(len(skinCaseChance)):
     skinCaseChance[i] = float(skinCaseChance[i])
 
+partCaseChance = '''2
+4
+2
+2
+2
+5
+4
+2
+2
+2
+4
+2
+2
+2
+5
+4
+2
+2
+2
+4
+2
+2
+2
+5
+4
+2
+2
+1.5
+1.5
+1.5
+1.5
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1'''.split("\n")
+for i in range(len(partCaseChance)):
+    partCaseChance[i] = float(partCaseChance[i])
+
 def OpenCase(case, chances):
     for i in range(100):
         os.system('cls')
@@ -1582,11 +1686,12 @@ print('''1 - Кейс Новичка
 10 - Кейс с оружием
 11 - Кейс с кейсами
 12 - Кейс со скинами
+13 - Кейс с частями снаряжения
       
       
       ''')
 caseChoice = input()
-while caseChoice not in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]:
+while caseChoice not in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]:
     print("Число, сэр...")
     caseChoice = input()
 caseChoice = int(caseChoice)
@@ -1613,5 +1718,7 @@ elif caseChoice == 10:
     OpenCase(weaponCase, weapCaseChance)
 elif caseChoice == 11:
     OpenCase(caseCase, caseCaseChance)
+elif caseChoice == 13:
+    OpenCase(partCase, partCaseChance)
 else:
     OpenCase(skinCase, skinCaseChance)
